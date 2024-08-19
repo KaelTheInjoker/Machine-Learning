@@ -1,3 +1,82 @@
+#==================================CURRENT=======================#
+
+
+# Ex1: Write a NumPy program to reverse an array (first element becomes last).
+# Input: [12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37]
+import numpy as np 
+
+ex1_2 = [12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37]
+
+def numpy_sort():
+    arr = np.array(ex1_2)
+    reverse_arr = arr[::-1] 
+    return print(reverse_arr)
+
+# numpy_sort()
+
+# Ex2: Write a NumPy program to test whether each element of a 1-D array is also present in a second array
+# Input Array1: [ 0 10 20 40 60]
+#       Array2: [10, 30, 40]
+
+arr_1 = [0,10,20,40,60]
+arr_2 = [10, 30, 40]
+
+def numpy_check():
+    arr_1_1 = np.array(arr_1)
+    arr_2_1 = np.array(arr_2)
+    check = np.isin(arr_1_1,arr_2_1)
+    return print(check)
+
+# numpy_check()
+
+
+
+# Ex3: Write a NumPy program to find the indices of the maximum and minimum values along the given axis of an array
+# Input Array [1,6,4,8,9,-4,-2,11]g
+
+def check_numpy_3():
+    arr = np.array([1,6,4,8,9,-4,-2,11])
+    max_val = np.max(arr)
+    min_val = np.min(arr)
+    out_put = []
+    for i in range(len(arr)):
+        if arr[i] == min_val:
+            out_put.append(i)
+        if arr[i] == max_val:
+            out_put.append(i)
+    return print(out_put)
+
+# check_numpy_3()
+
+# Ex4: Read the entire file story.txt and write a program to print out top 100 words occur most
+# frequently and their corresponding appearance. You could ignore all
+# punction characters such as comma, dot, semicolon, ...
+# Sample output:
+# house: 453
+# dog: 440
+# people: 312
+# ...
+
+import pandas as pd
+
+# file = pd.read_csv('abc.txt')
+
+# file = pd.read_txt('D:\Development\Data Projects (SQL & Python)\Python\Machine Learning\story.txt', delimiter='\t', header=0)
+with open('D:\Development\Data Projects (SQL & Python)\Python\Machine Learning\story.txt', 'r') as f:
+    text = f.read()
+    
+words = pd.Series(text.split())
+word_cnt = words.value_counts()
+df = pd.DataFrame(word_cnt, columns=['word_cnt']).sort_values(['word_cnt'], ascending = False)
+
+print(df.head(100))
+
+
+
+
+#==========OLD===========
+
+
 # Ex1: Write a program to count positive and negative numbers in a list
 data1 = [-10, -21, -4, -45, -66, 93, 11, -4, -6, 12, 11, 4]
 
@@ -133,32 +212,26 @@ def find_even():
 # - All the words are from the file wordsEn.txt
 # - If there are multiple shortest chains, return any of them is sufficient
 
-user_input = input('Pls input sthing:')
+# user_input = input('Pls input 2 random words in English:')
+# print(user_input)
 
+# def word_check():
+#     list_of_words = user_input.split()
+#     len_check = []
+    
+#     for i in list_of_words:
+#         if len(i) >= 3:
+#             len_check.append(True) 
+#         else:
+#             len_check.append(False) 
+            
+    
 
 
 # def check_input():
 #     length = len(user_input)
     
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
